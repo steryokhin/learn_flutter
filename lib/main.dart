@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
         itemBuilder: (context, index) {
           int displayIndex = index + 1;
           return ListTile(
-            leading: const Icon(Icons.android),
+            leading: const Icon(FontAwesomeIcons.globeEurope),
             title: Text("item number $displayIndex"),
             onTap: () {
               Navigator.push(
@@ -103,11 +104,12 @@ class SecondPage extends StatelessWidget {
       title: Text('Second Page')
     ), 
     body: Center(
-      child: RaisedButton(
+      child: RaisedButton.icon(
         onPressed: () {
           Navigator.pop(context);
         },
-        child: Text("Go Back")
+        label: Text("Go Back"),
+        icon: new Icon(FontAwesomeIcons.stepBackward),
       ),
     ),
     );
